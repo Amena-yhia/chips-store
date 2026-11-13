@@ -1,0 +1,501 @@
+/* لوحة الألوان المعتمدة على تدرجات الأخضر */
+:root {
+    --green-darkest: #0f3d22;      /* أخضر غامق جداً للعناوين والفوتر */
+    --green-primary: #1b6b3a;      /* أخضر أساسي غني */
+    --green-medium: #2e9e5b;       /* أخضر متوسط حيوي للأزرار والتمييز */
+    --green-light: #52c47d;        /* أخضر فاتح للحدود والتأثيرات */
+    --green-soft-bg: #eef7f1;      /* خلفية خضراء هادئة جداً */
+    --green-mint-border: #cde8d6;  /* لون حدود البطاقات */
+    --text-dark: #1d2b22;
+    --text-muted: #4a5d51;
+    --white: #ffffff;
+    --border-radius: 10px;
+    --shadow: 0 6px 16px rgba(15, 61, 34, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 75px 0;
+}
+
+.bg-green-tint {
+    background-color: var(--green-soft-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--green-darkest);
+    margin-bottom: 45px;
+    position: relative;
+    font-weight: 800;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--green-primary), var(--green-light));
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* الأزرار بتدرجات الأخضر */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--green-primary), var(--green-medium));
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(27, 107, 58, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--green-darkest), var(--green-primary));
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--green-darkest);
+}
+
+.btn-light:hover {
+    background-color: var(--green-soft-bg);
+    color: var(--green-primary);
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--green-darkest);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* الشريط العلوي */
+.navbar {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--green-soft-bg);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--green-darkest);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--green-medium);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green-medium);
+}
+
+/* القسم الرئيسي */
+.hero {
+    background: linear-gradient(135deg, rgba(15, 61, 34, 0.92), rgba(46, 158, 91, 0.85)), 
+                url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1350&q=80') center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 115px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    color: #e6f5ec;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* المميزات */
+.features {
+    margin-top: -45px;
+    position: relative;
+    z-index: 10;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--green-medium);
+    text-align: center;
+}
+
+.feature-box .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    color: var(--green-darkest);
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    color: var(--text-muted);
+}
+
+/* التصنيفات */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--white);
+    border: 1.5px solid var(--green-mint-border);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green-medium);
+    background-color: var(--green-soft-bg);
+}
+
+.category-card h3 {
+    color: var(--green-primary);
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: var(--text-muted);
+}
+
+/* المنتجات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--green-mint-border);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--green-darkest);
+    color: var(--white);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/*.product-img-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, #dcf0e3, #c2e5ce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-primary);
+    font-weight: 700;
+}*/
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    color: var(--green-darkest);
+    margin-bottom: 8px;
+}
+
+.product-info .unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+/* قسم الطلب والتواصل */
+.order-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.order-text h2 {
+    font-size: 2rem;
+    color: var(--green-darkest);
+    margin-bottom: 15px;
+}
+
+.order-text p {
+    color: var(--text-muted);
+}
+
+.contact-details {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.contact-details li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.order-form {
+    background: var(--green-soft-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--green-mint-border);
+    box-shadow: var(--shadow);
+}
+
+.order-form h3 {
+    margin-bottom: 20px;
+    color: var(--green-primary);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--green-darkest);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--green-mint-border);
+    background-color: var(--white);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green-medium);
+    box-shadow: 0 0 0 3px rgba(46, 158, 91, 0.15);
+}
+
+/* التذييل */
+footer {
+    background-color: var(--green-darkest);
+    color: #d5ebe0;
+    text-align: center;
+    padding: 22px 0;
+    font-size: 0.95rem;
+}
+
+/* التجاوب مع الشاشات الصغيرة (الموبايل) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .order-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   تنسيق صور المنتجات الحقيقية (الجديد)
+   ========================================= */
+
+/* 1. تنسيق الحاوية الرمادية الفاتحة التي تحيط بالصورة */
+.product-img-placeholder {
+    height: 200px; /* طول ثابت وموحد لكل بطاقات المنتجات */
+    background-color: #f7fcf9; /* خلفية خضراء باهتة جداً أو رمادية لملء الفراغات */
+    display: flex; /* لمركزة الصورة */
+    align-items: center; /* تمركز الصورة عمودياً */
+    justify-content: center; /* تمركز الصورة أفقياً */
+    overflow: hidden; /* إخفاء أي جزء زائد خارج الحاوية */
+    padding: 10px; /* مسافة بين الصورة وحافة البطاقة */
+    border-bottom: 1px solid var(--green-mint-border); /* خط فاصلي بسيط */
+}
+
+/* 2. تنسيق الصورة الحقيقية نفسها (wsm img) */
+.product-img-placeholder img {
+    max-width: 100%; /* أقصى عرض هو عرض الحاوية */
+    max-height: 100%; /* أقصى طول هو طول الحاوية */
+    
+    /* الخيار الأهم لظهور الصورة كاملة: object-fit: contain; */
+    /* هذا يجعل الصورة تتقلص لتتلاءم تماماً مع المربع دون أن تُقص أو تتمدد */
+    object-fit: contain; 
+    
+    border-radius: calc(var(--border-radius) - 4px); /* زوايا منحنية بسيطة للصورة */
+}
+/* =========================================
+   تنسيقات خاصة بالشاشات الصغيرة (الموبايل)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. تبسيط الشريط العلوي (Navbar) */
+    .nav-container {
+        flex-direction: column; /* جعل اللوغو والقائمة فوق بعضهم */
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none; /* إخفاء القائمة التقليدية على الموبايل (يفضل استبدالها لاحقاً بزر قائمة hamburger) */
+    }
+
+    /* 2. تصغير حجم خط العنوان الرئيسي */
+    .hero h1 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    /* 3. جعل المميزات تظهر في عمود واحد */
+    .features-grid {
+        grid-template-columns: 1fr; /* عمود واحد فقط بدلاً من 3 */
+        gap: 15px;
+    }
+
+    /* 4. جعل تصنيفات المنتجات تظهر في عمود واحد */
+    .categories-grid {
+        grid-template-columns: 1fr; /* عمود واحد فقط بدلاً من 4 */
+        gap: 15px;
+    }
+
+    /* 5. ترتيب المنتجات في صفين على الموبايل */
+    .products-grid {
+        grid-template-columns: 1fr 1fr; /* صف يحتوي على منتجين */
+        gap: 10px; /* مسافة أصغر بين المنتجات */
+        padding: 0 5px;
+    }
+    
+    .product-card {
+        padding: 10px;
+    }
+    
+    .product-img-placeholder {
+        height: 120px; /* تصغير حجم الصورة على الموبايل */
+    }
+
+    /* 6. تبسيط قسم طلبات الجملة */
+    .order-container {
+        grid-template-columns: 1fr; /* عمود واحد بدلاً من عمودين */
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .contact-details {
+        text-align: right; /* الحفاظ على محاذاة التفاصيل جهة اليمين على الموبايل */
+        padding: 0 15px;
+    }
+}
